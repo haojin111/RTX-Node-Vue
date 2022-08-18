@@ -13,7 +13,8 @@ Clone the project repository firstly
 Follow the steps to install this service on local environment for developing
 
 1. Go to server folder
-``` cd ./Server
+```
+cd ./Server
 ```
 2. Install node packages
 ```
@@ -34,13 +35,15 @@ Your app is running on port 3000
 Follow the steps to install this service on local environment for developing
 
 1. Go to client folder
-``` cd ./client
+```
+cd ./client
 ```
 2. Install node packages
 ```
 npm install
 ```
 4. Runing app
-```npm run serve
+```
+npm run serve
 ```
 Your Vue app is running on port 8080
