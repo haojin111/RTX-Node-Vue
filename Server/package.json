@@ -1,0 +1,35 @@
+{
+  "name": "rtx-test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "rtx-test usage only",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:sync": "nodemon ./sync.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.2",
+    "express-joi-validation": "^5.0.1",
+    "express-validation": "^4.1.0",
+    "find-config": "^1.0.0",
+    "joi": "^17.6.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.1.0",
+    "passport": "^0.5.2",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^5.22.4",
+    "sequelize-cli": "^5.5.0",
+    "sequelize-paginate": "^1.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  }
+}
