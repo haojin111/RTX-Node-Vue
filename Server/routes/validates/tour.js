@@ -10,7 +10,7 @@ export default {
         body: Joi.object().keys({
             id: Joi.string().length(4),
             name: Joi.string().required(),
-            countryCode: Joi.string().length(2),
+            country: Joi.string().length(2),
             score: Joi.number().min(0).max(100)
         }).required(),
     },
@@ -19,7 +19,7 @@ export default {
             id: Joi.string().length(4),
         }).required(),
         body: Joi.object().keys({
-            countryCode: Joi.string().length(2),
+            country: Joi.string().length(2),
             name: Joi.string(),
             score: Joi.number().min(0).max(100)
         })

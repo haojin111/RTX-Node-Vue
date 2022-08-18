@@ -10,7 +10,7 @@ const tourCtrl = {
     return models.Tour.findByPk(id);
   },
   create: async function (params) {
-    const tour = await this.get(req.body.id);
+    const tour = await this.get(params.id);
     if (tour) throw new Error("A tour is already existed with id: " + tour.id);
     return models.Tour.create(params);
   },

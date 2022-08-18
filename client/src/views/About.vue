@@ -3,9 +3,14 @@
     <!-- 8. Display the data with a structured table in following columns, -->
     <!-- property.name | property.location.country | property.reviews.summary.score -->
     <el-table :data="pagedHotels" stripe style="width: 100%">
-      <el-table-column prop="property.name" label="Name" width="180" />
-      <el-table-column prop="property.location.country" label="Country" width="180" />
+      <el-table-column prop="property.name" label="Name" />
+      <el-table-column prop="property.location.country" label="Country" />
       <el-table-column prop="property.reviews.summary.score" label="Score" />
+      <el-table-column fixed="right" label="Operations" width="120">
+        <template #default="scope">
+          <el-button link type="primary" size="small" @click="addTour(scope.row)">Add</el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <!-- 9. Do a simple pagination of 5 per page-->
     <el-pagination
@@ -64,6 +69,18 @@ export default {
   methods: {
     setPage(val) {
       this.page = val;
+    },
+    addTour(row) {
+      axios.post('/api/tours', {
+        id: row.property?.propertyCode,
+        name: row.property.name,
+        country: row.property?.location?.country || 'US',
+        score: row.property?.reviews?.summary?.score || 0,
+      })
+        .then((res) => {
+          // should add error handlers
+          console.log(res);
+        });
     },
   },
 };
