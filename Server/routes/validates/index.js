@@ -1,5 +1,5 @@
 // request params and payload validation
-import hotelValidate from "./hotel.js";
+import tourValidate from "./tour.js";
 
 // validate middleware
 function validateMiddleware(schema) {
@@ -26,4 +26,4 @@ function validateMiddleware(schema) {
     }
 };
 
-export { validateMiddleware, hotelValidate };
+export { validateMiddleware, tourValidate };

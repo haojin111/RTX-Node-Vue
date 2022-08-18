@@ -1,18 +1,18 @@
 'use strict'
 
 import { Router } from 'express';
-import { validateMiddleware, hotelValidate as reqValidation } from "./validates/index.js";
+import { validateMiddleware, tourValidate as reqValidation } from "./validates/index.js";
 
-import hotelController from './handlers/hotelAPIHandler.js';
+import tourController from './handlers/tourAPIHandler.js';
 
 const router = Router();
 
-// list api of hotels
+// list api of tours
 router.get(
   '/',
   async (req, res, next) => {
     try {
-      const result = await hotelController.list(req.query);
+      const result = await tourController.list(req.query);
       res.status(200).send(result);
     } catch (err) {
       next(err);
@@ -20,13 +20,13 @@ router.get(
   }
 );
 
-// get a hotel by id
+// get a tour by id
 router.get(
   '/:id',
   validateMiddleware(reqValidation.get),
   async (req, res, next) => {
     try {
-      const result = await hotelController.get(req.params.id);
+      const result = await tourController.get(req.params.id);
       if (!result) throw new Error("Hotel not found by id: " + req.params.id);
       res.status(200).send(result);
     } catch (err) {
@@ -35,13 +35,13 @@ router.get(
   }
 );
 
-// add a hotel
+// add a tour
 router.post(
   '/',
   validateMiddleware(reqValidation.create),
   async (req, res, next) => {
     try {
-      const result = await hotelController.create(req.body);
+      const result = await tourController.create(req.body);
       res.status(200).send(result);
     } catch (err) {
       next(err);
@@ -49,13 +49,13 @@ router.post(
   }
 );
 
-// update a hotel
+// update a tour
 router.patch(
   '/:id',
   validateMiddleware(reqValidation.update),
   async (req, res, next) => {
     try {
-      const result = await hotelController.update(req.params.id, req.body);
+      const result = await tourController.update(req.params.id, req.body);
       res.status(200).send(result);
     } catch (err) {
       next(err);
@@ -63,13 +63,13 @@ router.patch(
   }
 );
 
-// delete a hotel
+// delete a tour
 router.delete(
   '/:id',
   validateMiddleware(reqValidation.delete),
   async (req, res, next) => {
     try {
-      const result = await hotelController.delete(req.params.id);
+      const result = await tourController.delete(req.params.id);
       res.status(200).send(result);
     } catch (err) {
       next(err);

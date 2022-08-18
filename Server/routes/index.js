@@ -5,7 +5,7 @@ import validate from 'express-validation';
 
 // 4. Import routes
 import externalApi from './externalAPI.js';
-import hotelAPI from './hotelAPI.js';
+import tourAPI from './tourAPI.js';
 
 const router = Router({
   caseSensitive: true
@@ -14,8 +14,8 @@ const router = Router({
 // 5. Use imported routes in router
 router.use('/', externalApi);
 
-// hotel CRUD apis definition
-router.use('/hotels', hotelAPI);
+// tours CRUD apis definition
+router.use('/tours', tourAPI);
 
 // error handling
 router.use((err, req, res, next) => {

@@ -3,7 +3,7 @@
 
 import Sequelize from 'sequelize';
 import config from '../config.js';
-import Hotel from './hotel.js';
+import Tour from './tour.js';
 
 const sequelize = new Sequelize(
     config.db.database,
@@ -43,7 +43,7 @@ try {
 
 
 const models = {
-    Hotel: Hotel.init(sequelize, Sequelize),
+    Tour: Tour.init(sequelize, Sequelize),
 };
 
 Object.keys(models).forEach((modelName) => {

@@ -1,6 +1,6 @@
-// hotel db schema
+// tour db schema
 import Sequelize from "sequelize";
-export default class Hotel extends Sequelize.Model {
+export default class Tour extends Sequelize.Model {
   static init(sequelize, DataTypes) {
     return super.init(
       {
@@ -15,7 +15,7 @@ export default class Hotel extends Sequelize.Model {
         updatedAt: 'updatedAt',
         createdAt: 'createdAt',
         deletedAt: 'deletedAt',
-        tableName: "Hotel",
+        tableName: "Tour",
         sequelize
       }
     );

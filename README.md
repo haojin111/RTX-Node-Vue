@@ -3,7 +3,7 @@ Node-Vue Project
 # Overview:
 1. Node.js backend platform 
 2. Vue.js frontend platform
-3. Calling 3rd party api 
+3. Calling 3rd party api and db init script
 
 # ## Local Developing Installation:
 Clone the project repository firstly
@@ -21,7 +21,11 @@ npm install
 ```
 3. Please config your postgresql db
 You can update db config on .env file
-4. Runing app
+4. Please init db
+```
+npm run db:sync
+```
+5. Runing app
 ```
 npm run dev
 ```
